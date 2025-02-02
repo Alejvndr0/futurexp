@@ -47,7 +47,7 @@
 
     /* Navbar */
     nav {
-        background-color:  #FFA500;
+        background-color: #000000;
         padding: 10px 0;
     }
 
@@ -101,7 +101,7 @@
         background: #111;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(255, 123, 0, 0.5);
+        box-shadow: 0 0 10px #ff7b00;
         text-align: center;
         transition: transform 0.3s ease;
         cursor: pointer;
@@ -148,6 +148,14 @@
             font-size: 3em;
         }
 
+        nav ul {
+            flex-direction: column;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
         .services-container {
             flex-direction: column;
             align-items: center;
@@ -157,30 +165,47 @@
             width: 80%;
         }
 
-        nav ul {
-            flex-direction: column;
+        .service h3 {
+            font-size: 1.3em;
         }
 
-        nav ul li {
-            margin: 10px 0;
+        .service p {
+            font-size: 0.9em;
+        }
+
+        .services-highlight h2 {
+            font-size: 1.8em;
         }
     }
 
     @media (max-width: 480px) {
         header h1 {
-            font-size: 3em;
+            font-size: 2.5em;
         }
 
         .service {
             width: 100%;
         }
 
+        .service h3 {
+            font-size: 1.2em;
+        }
+
+        .service p {
+            font-size: 0.85em;
+        }
+
         .services-highlight h2 {
-            font-size: 1.8em;
+            font-size: 1.6em;
         }
 
         nav ul {
             padding-left: 0;
+        }
+
+        nav ul li a {
+            font-size: 0.9em;
+            padding: 8px 12px;
         }
     }
 </style>

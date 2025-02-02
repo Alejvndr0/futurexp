@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FutureX - Soluciones Digitales</title>
-    <!-- Enlazamos el archivo CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <style>
         /* Estilos generales */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background-color: #111;
             color: #fff;
             line-height: 1.6;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la pantalla */
+            min-height: 100vh;
         }
 
         /* Contenedor principal */
@@ -25,18 +24,19 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            flex-grow: 1; /* Permite que el contenido crezca para llenar el espacio disponible */
+            flex-grow: 1;
         }
 
         /* Header */
         header {
-            background: linear-gradient(to right, #0e44a8, hsl(32, 59%, 51%));
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: white;
-            padding: 20px 0;
+            padding: 40px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         header img {
@@ -46,9 +46,12 @@
 
         header h1 {
             margin: 0;
-            font-size: 6em;
+            font-size: 4em;
             text-align: center;
+            font-weight: bold;
             flex-grow: 1;
+            color: #fff;
+            text-transform: uppercase;
         }
 
         nav {
@@ -65,39 +68,41 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: 30px;
             transition: background 0.3s ease;
         }
 
         nav ul li a:hover {
             background-color: #ff7b00;
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.7);
         }
 
         /* Banner */
         .banner {
             display: flex;
-            align-items: center; /* Centra el contenido verticalmente */
-            justify-content: space-between; /* Separa la imagen del texto */
+            align-items: center;
+            justify-content: space-between;
             background: url('images/banner.jpg') no-repeat center center/cover;
             color: white;
-            padding: 50px 20px;
+            padding: 70px 20px;
             text-align: left;
             flex-wrap: wrap;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
         }
 
         .banner img {
-            width: 40%;
+            width: 45%;
             height: auto;
-            border-radius: 8px;
-            margin-left: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             animation: rotateImage 5s linear infinite;
         }
 
@@ -112,78 +117,77 @@
 
         .banner .container {
             width: 50%;
-            text-align: center;
+            padding-left: 20px;
         }
 
         .banner h2 {
-            font-size: 2.5em;
-            margin: 0;
+            font-size: 3em;
+            margin-bottom: 10px;
         }
 
         .banner p {
-            font-size: 1.2em;
-        }
-
-        /* Nueva descripción y botón CTA */
-        .welcome-description {
-            font-size: 1.2em;
-            margin-top: 20px;
-            color: #ddd;
+            font-size: 1.3em;
+            line-height: 1.8;
         }
 
         .cta-button {
             display: inline-block;
             background-color: #FFA500;
             color: #fff;
-            padding: 15px 30px;
+            padding: 15px 40px;
             margin-top: 20px;
-            font-size: 1.2em;
-            border-radius: 5px;
+            font-size: 1.3em;
+            border-radius: 50px;
             text-decoration: none;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.5);
         }
 
         .cta-button:hover {
             background-color: #e07b00;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.7);
         }
 
         /* Servicios Destacados */
         .services-highlight {
-            padding: 50px 0;
+            padding: 60px 0;
             background-color: #222;
             text-align: center;
+            color: #fff;
         }
 
         .services-highlight h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 40px;
             color: #FFA500;
+            font-weight: bold;
         }
 
         .service {
             display: inline-block;
             width: 30%;
             margin: 0 1.5%;
-            padding: 20px;
+            padding: 25px;
             background-color: #333;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service h3 {
-            font-size: 1.5em;
+            font-size: 1.6em;
             margin: 0 0 10px;
             color: #FFA500;
         }
 
         .service p {
-            font-size: 1em;
+            font-size: 1.1em;
             margin: 0;
         }
 
         .service:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(255, 165, 0, 0.9);
         }
 
         /* Footer */
@@ -191,53 +195,24 @@
             background-color: #0e44a8;
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             margin-top: auto;
-            width: 100%;
         }
 
         footer p {
             margin: 0;
+            font-size: 1.2em;
         }
 
         /* MEDIA QUERIES PARA ADAPTAR EL DISEÑO EN DISPOSITIVOS MÓVILES */
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 3em;
-            }
-
-            .banner h2 {
-                font-size: 2em;
-            }
-
-            .banner p {
-                font-size: 1em;
-            }
-
-            .service h3 {
-                font-size: 1.2em;
-            }
-
-            .service p {
-                font-size: 0.9em;
-            }
-        }
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            header h1 {
-                font-size: 3em;
-            }
-
             .banner {
                 flex-direction: column;
                 text-align: center;
             }
 
             .banner img {
-                width: 70%;
+                width: 80%;
                 margin: 20px 0;
             }
 
@@ -259,7 +234,6 @@
             }
         }
 
-        /* Para pantallas grandes */
         @media (min-width: 1024px) {
             .service {
                 width: 22%;
@@ -278,7 +252,7 @@
             <ul>
                 <li><a href="about.html">Sobre mí</a></li>
                 <li><a href="services.html">Servicios</a></li>
-                <li><a href="contac.html">Contacto</a></li>
+                <li><a href="contact.html">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -287,14 +261,24 @@
         <div class="container">
             <h2>Bienvenido a FutureX</h2>
             <p>Tu socio en tecnología y crecimiento digital.</p>
-            <!-- Descripción de los servicios -->
             <p class="welcome-description">
                 En FutureX, ofrecemos soluciones digitales personalizadas para ayudar a tu empresa a crecer y sobresalir en el mundo digital. Desde desarrollo web hasta estrategias de marketing digital, estamos aquí para impulsarte al futuro.
             </p>
-            <!-- Botón de llamada a la acción -->
             <a href="services.html" class="cta-button">Descubre nuestros servicios</a>
         </div>
         <img src="img/nave2.png" alt="Imagen de FutureX">
+    </section>
+
+    <section class="services-highlight">
+        <h2>Servicios Destacados</h2>
+        <div class="service">
+            <h3>Desarrollo Web</h3>
+            <p>Creamos soluciones web innovadoras y a medida para cada negocio.</p>
+        </div>
+        <div class="service">
+            <h3>Consultoría</h3>
+            <p>Asesoramos a tu empresa para optimizar todos tus procesos digitales.</p>
+        </div>
     </section>
 
     <footer>

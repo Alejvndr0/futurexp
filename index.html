@@ -1,322 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FutureX - Soluciones Digitales</title>
-    <!-- Enlazamos el archivo CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la pantalla */
-        }
-
-        /* Contenedor principal */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-grow: 1; /* Permite que el contenido crezca para llenar el espacio disponible */
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(to right, #000000, hsl(217, 59%, 51%));
-            color: white;
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        header img {
-            width: 120px;
-            margin-left: 20px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 6em;
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        nav {
-            background-color:  #000000;
-            padding: 10px 0;
-           
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #ff7b00;
-        }
-
-        /* Banner */
-        .banner {
-            display: flex;
-            align-items: center; /* Centra el contenido verticalmente */
-            justify-content: space-between; /* Separa la imagen del texto */
-            background: url('images/banner.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 50px 20px;
-            text-align: left;
-            flex-wrap: wrap;
-        }
-
-        .banner img {
-            width: 40%;
-            height: auto;
-            border-radius: 8px;
-            margin-left: 20px;
-            animation: rotateImage 5s linear infinite;
-        }
-
-        @keyframes rotateImage {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .banner .container {
-            width: 50%;
-            text-align: center;
-        }
-
-        .banner h2 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-
-        .banner p {
-            font-size: 1.2em;
-        }
-
-        /* Nueva descripción y botón CTA */
-        .welcome-description {
-            font-size: 1.2em;
-            margin-top: 20px;
-            color: #ddd;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #FFA500;
-            color: #fff;
-            padding: 15px 30px;
-            margin-top: 20px;
-            font-size: 1.2em;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #e07b00;
-        }
-
-        /* Servicios Destacados */
-        .services-highlight {
-            padding: 50px 0;
-            background-color: #222;
-            text-align: center;
-        }
-
-        .services-highlight h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #FFA500;
-        }
-
-        .service {
-            display: inline-block;
-            width: 30%;
-            margin: 0 1.5%;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .service h3 {
-            font-size: 1.5em;
-            margin: 0 0 10px;
-            color: #FFA500;
-        }
-
-        .service p {
-            font-size: 1em;
-            margin: 0;
-        }
-
-        .service:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0e44a8;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: auto;
-            width: 100%;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* MEDIA QUERIES PARA ADAPTAR EL DISEÑO EN DISPOSITIVOS MÓVILES */
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 3em;
-            }
-
-            .banner h2 {
-                font-size: 2em;
-            }
-
-            .banner p {
-                font-size: 1em;
-            }
-
-            .service h3 {
-                font-size: 1.2em;
-            }
-
-            .service p {
-                font-size: 0.9em;
-            }
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            header h1 {
-                font-size: 3em;
-            }
-
-            .banner {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .banner img {
-                width: 70%;
-                margin: 20px 0;
-            }
-
-            .banner .container {
-                width: 100%;
-            }
-
-            .service {
-                width: 100%;
-                margin: 20px 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-        }
-
-        /* Para pantallas grandes */
-        @media (min-width: 1024px) {
-            .service {
-                width: 22%;
-            }
-        }
-
-
-
-/* Mantén la animación de rotación */
-@keyframes rotateImage {
-    from {
-        transform: rotate(0deg);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FutureX ofrece soluciones digitales personalizadas para impulsar el crecimiento de tu empresa en el mundo digital.">
+  <meta name="keywords" content="soluciones digitales, desarrollo web, tecnología, FutureX">
+  <meta name="author" content="FutureX">
+  <title>FutureX - Soluciones Digitales Innovadoras</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Animaciones personalizadas */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    to {
-        transform: rotate(360deg);
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
     }
-}
-
-    </style>
+    @keyframes rotateImage {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .rotate-image {
+      animation: rotateImage 20s linear infinite;
+    }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body>
-    <header>
-        <img src="img/fxlogofinal.png" alt="FutureX Logo">
-        <h1>FutureX</h1>
-    </header>
+<body class="bg-gray-900 text-white font-sans flex flex-col min-h-screen">
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="about.html">SOBRE NOSOTROS </a></li>
-                <li><a href="services.html">SERVICIOS</a></li>
-                <li><a href="contac.html">CONTACTO</a></li>
-            </ul>
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-gray-900 to-blue-600 py-6 shadow-lg">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <img src="img/fxlogofinal.png" alt="FutureX Logo" class="w-20 md:w-28">
+      <h1 class="text-3xl md:text-5xl font-extrabold">FutureX</h1>
+      <!-- Botón menú móvil -->
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <i data-lucide="menu" class="w-8 h-8"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+  <nav id="menu" class="bg-gray-800 py-4 md:block hidden sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+      <ul class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8">
+        <li><a href="about.html" class="hover:text-orange-500 transition">SOBRE NOSOTROS</a></li>
+        <li><a href="services.html" class="hover:text-orange-500 transition">SERVICIOS</a></li>
+        <li><a href="contac.html" class="hover:text-orange-500 transition">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <section class="bg-cover bg-center py-20 md:py-32 text-center md:text-left" style="background-image: url('img/banner.jpg')">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between animate-fadeIn">
+      <div class="md:w-1/2">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Impulsa tu negocio con <span class="text-orange-500">FutureX</span></h2>
+        <p class="text-lg md:text-xl mb-6 text-gray-200">Soluciones digitales innovadoras y personalizadas para hacer crecer tu empresa en el mundo digital.</p>
+        <a href="#services" class="inline-block bg-orange-500 text-white font-semibold px-8 py-4 rounded-lg hover:bg-orange-600 transition">DESCUBRE NUESTROS SERVICIOS</a>
+      </div>
+      <img src="img/nave2.png" alt="FutureX Imagen" class="md:w-1/3 w-3/4 mt-8 md:mt-0 rounded-lg rotate-image">
+    </div>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section id="about" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6 text-center md:text-left">
+      <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-6">Sobre Nosotros</h2>
+      <p class="text-gray-300 max-w-3xl mx-auto md:mx-0">
+        En <strong>FutureX</strong> nos especializamos en brindar soluciones tecnológicas adaptadas a las necesidades de cada cliente. Nuestro equipo combina creatividad, innovación y experiencia para llevar tu negocio al siguiente nivel en la era digital.
+      </p>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="services" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-10">Nuestros Servicios</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:-translate-y-2 transition">
+          <i data-lucide="laptop" class="w-12 h-12 mx-auto text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-4">Desarrollo Web</h3>
+          <p class="text-gray-400">Sitios modernos, rápidos y optimizados para atraer y retener clientes.</p>
         </div>
-    </nav>
-
-    <section class="banner">
-        <div class="container">
-            <h2>Bienvenido a FutureX</h2>
-           
-            <!-- Descripción de los servicios -->
-            <p class="welcome-description">
-                En FutureX, ofrecemos soluciones digitales personalizadas para ayudar a tu empresa a crecer y sobresalir en el mundo digital. Estamos aquí para impulsarte al futuro.
-            </p>
-            <!-- Botón de llamada a la acción -->
-            <a href="services.html" class="cta-button">DESCUBRE NUESTROS SERVICIOS</a>
+        <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:-translate-y-2 transition">
+          <i data-lucide="bar-chart-3" class="w-12 h-12 mx-auto text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-4">Marketing Digital</h3>
+          <p class="text-gray-400">Estrategias digitales personalizadas para aumentar tu visibilidad en línea.</p>
         </div>
-        <img src="img/nave2.png" alt="Imagen de FutureX">
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 FutureX. Todos los derechos reservados.</p>
+        <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:-translate-y-2 transition">
+          <i data-lucide="cpu" class="w-12 h-12 mx-auto text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-4">Consultoría Tecnológica</h3>
+          <p class="text-gray-400">Optimización de procesos y adopción de tecnologías emergentes.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    
+  <!-- Testimonios -->
+  <section id="testimonials" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-10">Lo que dicen nuestros clientes</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+          <p class="text-gray-300 italic">“FutureX transformó la presencia digital de mi empresa. Gracias a ellos aumentamos nuestras ventas en un 40%.”</p>
+          <h4 class="mt-4 font-semibold text-orange-400">– Juan Pérez, CEO</h4>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+          <p class="text-gray-300 italic">“Su equipo es increíblemente profesional y creativo. Recomiendo FutureX al 100%.”</p>
+          <h4 class="mt-4 font-semibold text-orange-400">– Ana Gómez, Emprendedora</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="py-20 bg-gray-900 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-6">Contáctanos</h2>
+      <p class="text-gray-300 mb-8">¿Listo para llevar tu negocio al futuro? Escríbenos y conversemos.</p>
+      <a href="mailto:contacto@futurex.com" class="inline-block bg-orange-500 px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition">Escríbenos</a>
+    </div>
+  </section>
+
+ <!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 pt-12">
+  <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-3 gap-12">
+
+    <!-- Logo y descripción -->
+    <div>
+      <h2 class="text-2xl font-bold text-white mb-4">FutureX</h2>
+      <p class="text-gray-400 text-sm">
+        Impulsamos tu futuro digital con soluciones tecnológicas
+        innovadoras para empresas y emprendedores.
+      </p>
+    </div>
+
+    <!-- Enlaces rápidos -->
+    <div class="flex flex-col space-y-3">
+      <h3 class="text-lg font-semibold text-white mb-2">Enlaces</h3>
+      <a href="#inicio" class="hover:text-indigo-400 transition">Inicio</a>
+      <a href="#nosotros" class="hover:text-indigo-400 transition">Nosotros</a>
+      <a href="#servicios" class="hover:text-indigo-400 transition">Servicios</a>
+      <a href="#contacto" class="hover:text-indigo-400 transition">Contacto</a>
+    </div>
+
+    <!-- Redes sociales -->
+    <div>
+      <h3 class="text-lg font-semibold text-white mb-4">Síguenos</h3>
+      <div class="flex space-x-4">
+        <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+          <i class="lucide-facebook w-6 h-6"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+          <i class="lucide-instagram w-6 h-6"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+          <i class="lucide-linkedin w-6 h-6"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+          <i class="lucide-twitter w-6 h-6"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Línea inferior -->
+  <div class="border-t border-gray-700 mt-10 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2025 FutureX. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+  <script>
+    // Menu responsive
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+    // Iconos Lucide
+    lucide.createIcons();
+  </script>
 </body>
 </html>

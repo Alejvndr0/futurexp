@@ -1,208 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre mí - FutureX</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros - FutureX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+  </style>
 </head>
-<style>
-    /* Estilos generales */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #fff;
-        line-height: 1.6;
-    }
+<body class="bg-gray-900 text-white font-sans flex flex-col min-h-screen">
 
-    .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-gray-900 to-blue-600 py-6 shadow-lg">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <img src="img/fxlogofinal.png" alt="FutureX Logo" class="w-20 md:w-28">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-center flex-grow">FutureX</h1>
+    </div>
+  </header>
 
-    /* Header */
-    header {
-        background: linear-gradient(to right, #000000, hsl(217, 59%, 51%));
-        color: white;
-        padding: 20px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  <!-- Navegación -->
+  <nav class="bg-gray-800 py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+      <ul class="flex justify-center space-x-8">
+        <li><a href="index.html" class="hover:text-orange-500 transition">INICIO</a></li>
+        <li><a href="services.html" class="hover:text-orange-500 transition">SERVICIOS</a></li>
+        <li><a href="contact.html" class="hover:text-orange-500 transition">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    header img {
-        width: 120px;
-        margin-left: 20px;
-    }
+  <!-- Hero / Banner -->
+  <section class="bg-cover bg-center py-28 text-center" style="background-image: url('images/banner.jpg')">
+    <div class="container mx-auto px-6 animate-fadeIn">
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Sobre Nosotros</h2>
+      <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+        Conoce quiénes somos y cómo podemos impulsar tu presencia digital.
+      </p>
+    </div>
+  </section>
 
-    header h1 {
-        margin: 0;
-        font-size: 6em;
-        flex-grow: 1;
-        text-align: center;
-    }
+  <!-- Sobre Nosotros -->
+  <section class="py-20">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row gap-8">
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex-1">
+        <h3 class="text-2xl font-bold text-orange-500 mb-4">Nuestra Misión</h3>
+        <p>
+          En <strong>FutureX</strong>, nos dedicamos a ofrecer soluciones digitales innovadoras que ayudan a empresas y emprendedores a impulsar su presencia en el mundo digital. Nuestro enfoque está en crear experiencias únicas y efectivas que generen resultados tangibles.
+        </p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex-1">
+        <h3 class="text-2xl font-bold text-orange-500 mb-4">Nuestra Visión</h3>
+        <p>
+          Creemos que el futuro de los negocios está en la innovación constante. Te ayudamos a navegar en este mundo digital con soluciones a la medida de tus necesidades, siempre con el objetivo de llevar tu empresa al siguiente nivel.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    /* Navbar */
-    nav {
-        background-color:  #000000;
-        padding: 10px 0;
-    }
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 pt-12 mt-auto">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+      <p class="text-sm">&copy; 2025 FutureX. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 0 15px;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 15px;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        background-color: #ff7b00;
-    }
-
-    /* Servicios */
-    .services-highlight {
-        padding: 50px 0;
-        text-align: center;
-    }
-
-    .services-highlight h2 {
-        font-size: 2.2em;
-        color: #ff7b00;
-        text-transform: uppercase;
-        margin-bottom: 30px;
-    }
-
-    .services-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .service {
-        width: 30%;
-        background: #111;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(255, 123, 0, 0.5);
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-
-    .service:hover {
-        transform: translateY(-5px);
-    }
-
-    .service h3 {
-        font-size: 1.5em;
-        color: #007bff;
-    }
-
-    .service p {
-        font-size: 1em;
-    }
-
-    /* Footer */
-    footer {
-        background-color: #0e44a8;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
-
-
-        footer p {
-            margin: 0;
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 3em;
-            }
-
-            .banner h2 {
-                font-size: 1.8em;
-            }
-
-            .banner p {
-                font-size: 1em;
-            }
-
-            .service {
-                width: 100%;
-                margin: 20px 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-        }
-
-        /* Para pantallas grandes */
-        @media (min-width: 1024px) {
-            .service {
-                width: 22%;
-            }
-        }
-</style>
-<body>
-    <header>
-        <img src="img/fxlogofinal.png" alt="FutureX Logo">
-
-        <h1>FutureX</h1>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="services.html">SERVICIOS</a></li>
-                <li><a href="contac.html">CONTACTO</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section id="about-us">
-        <div class="container">
-            <h2>Sobre Nosotros</h2>
-            <p>
-                En <strong>FutureX</strong>, nos dedicamos a ofrecer soluciones digitales innovadoras que ayudan a empresas y emprendedores a impulsar su presencia en el mundo digital.Nuestro enfoque está en crear experiencias únicas y efectivas que generen resultados tangibles.
-            </p>
-        
-            <p>
-                En <strong>FutureX</strong>, creemos que el futuro de los negocios está en la innovación constante. Te ayudamos a navegar en este mundo digital con soluciones a la medida de tus necesidades, siempre con el objetivo de llevar tu empresa al siguiente nivel.
-            </p>
-        </div>
-    </section>
-    
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 FutureX. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 </body>
 </html>

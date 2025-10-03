@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - FutureX</title>
+  <meta name="description" content="Contáctanos en FutureX para soluciones digitales personalizadas que impulsen tu negocio en el mundo digital.">
+  <meta name="keywords" content="contacto, soluciones digitales, FutureX, desarrollo web">
+  <meta name="author" content="FutureX">
+  <title>Contacto - FutureX || Contacto Dos</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+    /* Animaciones personalizadas */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans flex flex-col min-h-screen">
 
-<!-- Navbar Mejorada -->
+<!-- Navbar -->
 <nav class="bg-gray-800 sticky top-0 z-50 shadow-lg">
   <div class="container mx-auto px-6 flex items-center justify-between py-4">
     <!-- Logo -->
@@ -21,71 +32,175 @@
       <img src="img/fxlogofinal.png" alt="FutureX Logo" class="w-16 md:w-20">
       <span class="ml-3 text-2xl md:text-3xl font-bold text-white">FutureX</span>
     </a>
-
     <!-- Botón hamburguesa -->
     <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-           xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
-
     <!-- Menú -->
     <ul id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-center">
-      <li><a href="index.html" class="hover:text-orange-500 transition font-semibold">INICIO</a></li>
-      <li><a href="services.html" class="hover:text-orange-500 transition font-semibold">SERVICIOS</a></li>
+      <li class="relative group">
+        <a href="index.html" class="hover:text-orange-500 transition font-semibold">INICIO</a>
+       
+      </li>
       <li><a href="about.html" class="hover:text-orange-500 transition font-semibold">SOBRE NOSOTROS</a></li>
+      <li><a href="services.html" class="hover:text-orange-500 transition font-semibold">SERVICIOS</a></li>
+      <li><a href="contac.html" class="hover:text-orange-500 transition font-semibold">CONTACTO</a></li>
     </ul>
   </div>
 </nav>
 
-<script>
-  // Toggle menú móvil
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
+<!-- Hero / Banner -->
+<section class="bg-cover bg-center py-20 md:py-32 text-center" style="background-image: url('images/banner.jpg')">
+  <div class="container mx-auto px-6 animate-fadeIn">
+    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Ponte en <span class="text-orange-500">Contacto</span></h2>
+    <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+      Estamos listos para ayudarte a transformar tu negocio digital. Completa el formulario o contáctanos directamente.
+    </p>
+  </div>
+</section>
 
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-
-  <!-- Hero / Banner -->
-  <section class="bg-cover bg-center py-32 text-center" style="background-image: url('images/banner.jpg')">
-    <div class="container mx-auto px-6 animate-fadeIn">
-      <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Contáctanos</h2>
-      <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-        ¿Listo para empezar tu proyecto digital? Escríbenos o envíanos un mensaje.
-      </p>
+<!-- Contacto y Formulario -->
+<section class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row gap-12">
+      <!-- Formulario -->
+      <div class="md:w-1/2 animate-fadeIn">
+        <h3 class="text-2xl md:text-3xl font-bold text-orange-500 mb-6">Envíanos un Mensaje</h3>
+        <form method="post" action="contac.html" class="space-y-6">
+          <div>
+            <input type="text" name="name" placeholder="Nombre" required class="w-full p-4 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="Correo Electrónico" required class="w-full p-4 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+          </div>
+          <div>
+            <input type="text" name="subject" placeholder="Asunto" required class="w-full p-4 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+          </div>
+          <div>
+            <textarea name="message" placeholder="Tu Mensaje" rows="6" required class="w-full p-4 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+          </div>
+          <button type="submit" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition">Enviar Mensaje</button>
+        </form>
+      </div>
+      <!-- Información de Contacto -->
+      <div class="md:w-1/2 animate-fadeIn">
+        <h3 class="text-2xl md:text-3xl font-bold text-orange-500 mb-6">Información de Contacto</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <i data-lucide="map-pin" class="w-6 h-6 text-orange-500"></i>
+            <p class="text-gray-300">785 15h Street, Office 478, New York, USA</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="phone" class="w-6 h-6 text-orange-500"></i>
+            <a href="tel:+1300877503" class="text-gray-300 hover:text-orange-500">+1 (300) 877-503</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="mail" class="w-6 h-6 text-orange-500"></i>
+            <a href="mailto:contact@futurex.com" class="text-gray-300 hover:text-orange-500">contact@futurex.com</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <i data-lucide="smartphone" class="w-6 h-6 text-orange-500"></i>
+            <a href="https://api.whatsapp.com/send/?phone=59175919651&text&type=phone_number&app_absent=0&wame_ctl=1" target="_blank" class="text-gray-300 hover:text-orange-500">WhatsApp: +591 75919651</a>
+          </div>
+        </div>
+        <div class="mt-8">
+          <h4 class="text-lg font-semibold text-orange-500 mb-4">Síguenos</h4>
+          <div class="flex justify-center gap-4">
+            <a href="https://www.facebook.com/share/1BSfUmpZdu/" target="_blank">
+              <i data-lucide="facebook" class="w-6 h-6 text-gray-400 hover:text-orange-500"></i>
+            </a>
+            <a href="https://www.instagram.com/futurexsolucionesdigitales_?igsh=MTNmamQ2amVoMHZtaA==" target="_blank">
+              <i data-lucide="instagram" class="w-6 h-6 text-gray-400 hover:text-orange-500"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/futurex-digital-solutions" target="_blank">
+              <i data-lucide="linkedin" class="w-6 h-6 text-gray-400 hover:text-orange-500"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Redes Sociales / Contacto -->
-  <section class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6 text-center">
-      <div class="flex flex-col md:flex-row justify-center gap-8">
-        <a href="https://www.facebook.com/share/1BSfUmpZdu/" target="_blank" class="bg-gray-800 p-6 rounded-xl shadow-lg hover:-translate-y-2 transition flex items-center gap-3 justify-center">
-          <i data-lucide="facebook" class="w-6 h-6 text-orange-500"></i> Facebook
+<!-- Mapa -->
+<section class="py-20 bg-gray-800">
+  <div class="container mx-auto px-6 animate-fadeIn">
+    <h3 class="text-2xl md:text-3xl font-bold text-orange-500 mb-6 text-center">Encuéntranos</h3>
+    <div class="w-full h-96 rounded-lg overflow-hidden">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0190035963164!2d-122.41941568468164!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f5e7e3b1b%3A0x7b3a3e3f3e3f3e3f!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1635781234567!5m2!1sen!2sus" 
+              class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 pt-12">
+  <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-3 gap-12 text-center">
+    <div>
+      <h3 class="text-white text-2xl font-bold mb-4">FutureX</h3>
+      <p class="text-gray-400 text-sm">Impulsamos tu futuro digital con innovación y soluciones a medida.</p>
+      <div class="flex justify-center gap-4 mt-4">
+        <a href="https://www.facebook.com/share/1BSfUmpZdu/" target="_blank">
+          <i data-lucide="facebook" class="w-6 h-6 text-gray-400 hover:text-orange-500"></i>
         </a>
-        <a href="https://www.instagram.com/futurexsolucionesdigitales_?igsh=MTNmamQ2amVoMHZtaA==" target="_blank" class="bg-gray-800 p-6 rounded-xl shadow-lg hover:-translate-y-2 transition flex items-center gap-3 justify-center">
-          <i data-lucide="instagram" class="w-6 h-6 text-orange-500"></i> Instagram
+        <a href="https://www.instagram.com/futurexsolucionesdigitales_?igsh=MTNmamQ2amVoMHZtaA==" target="_blank">
+          <i data-lucide="instagram" class="w-6 h-6 text-gray-400 hover:text-orange-500"></i>
         </a>
-        <a href="https://api.whatsapp.com/send/?phone=59175919651&text&type=phone_number&app_absent=0&wame_ctl=1" target="_blank" class="bg-gray-800 p-6 rounded-xl shadow-lg hover:-translate-y-2 transition flex items-center gap-3 justify-center">
-          <i data-lucide="smartphone" class="w-6 h-6 text-orange-500"></i> WhatsApp
+        <a href="https://www.linkedin.com/company/futurex-digital-solutions" target="_blank">
+          <i data-lucide="linkedin" class="w-6 h-6 text-gray-400 hover:text-orange-500"></i>
         </a>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 pt-12">
-    <div class="container mx-auto px-6 md:px-12 text-center">
-      <p class="text-sm">&copy; 2025 FutureX. Todos los derechos reservados.</p>
+    <div class="flex flex-col space-y-3">
+      <h3 class="text-white text-lg font-semibold mb-2">Enlaces</h3>
+      <a href="index.html" class="hover:text-orange-500 transition">Inicio</a>
+      <a href="about.html" class="hover:text-orange-500 transition">Sobre Nosotros</a>
+      <a href="services.html" class="hover:text-orange-500 transition">Servicios</a>
+      <a href="contac.html" class="hover:text-orange-500 transition">Contacto</a>
     </div>
-  </footer>
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-4">Contacto</h3>
+      <p class="text-gray-400 text-sm">785 15h Street, Office 478, New York, USA</p>
+      <a href="mailto:contact@futurex.com" class="text-gray-400 hover:text-orange-500">contact@futurex.com</a><br>
+      <a href="tel:+1300877503" class="text-gray-400 hover:text-orange-500">+1300 877-503</a>
+    </div>
+  </div>
+  <div class="border-t border-gray-700 mt-10 py-6 text-center text-sm text-gray-500">
+    &copy; 2025 FutureX. Todos los derechos reservados.
+  </div>
+</footer>
 
-  <script>
-    lucide.createIcons();
-  </script>
+<!-- Scroll Top Button -->
+<button id="scroll-top" class="fixed bottom-6 right-6 bg-orange-500 text-white p-3 rounded-full hover:bg-orange-600 transition hidden">
+  <i data-lucide="arrow-up" class="w-6 h-6"></i>
+</button>
+
+<script>
+  // Initialize Lucide icons
+  lucide.createIcons();
+
+  // Toggle menú móvil
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
+  // Scroll top button
+  const scrollTop = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTop.classList.remove('hidden');
+    } else {
+      scrollTop.classList.add('hidden');
+    }
+  });
+  scrollTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 </body>
 </html>
